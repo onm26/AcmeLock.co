@@ -2,6 +2,59 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   color: royalblue;
 }
-h1, p {
-  color: royalblue;
+
+h1 {
+  font-size: clamp(1.2rem, calc(7vw + 1rem), 5rem);
+  color: rgb(75, 114, 233);
 }
+
+h2 {
+  font-size: clamp(smaller);
+  color:rgb(245, 246, 250);
+}
+
+p {
+  font-size: clamp(x-small);
+  color: rgb(238, 240, 243);
+
+}
+
+.navbar-brand {
+  color: #144b9d;
+}
+
+.btn {
+  color: #144b9d;
+  border: #144b9d;
+}
+
+.btn-outline-success {
+  --bs-btn-color: #144b9d;
+  --bs-btn-border-color: #144b9d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #144b9d;
+  --bs-btn-hover-border-color: #144b9d;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  
+  --bs-btn-active-bg:#144b9d;
+  --bs-btn-active-border-color: #144b9d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #144b9d;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #144b9d;
+  --bs-gradient: none;
+}
+
+.hero {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/lock1.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#e7ebf1
+
+}
+
