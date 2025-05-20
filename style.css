@@ -15,9 +15,12 @@ h2 {
 
 p {
   font-size: clamp(x-small);
-  color: rgb(238, 240, 243);
-
+  color: rgb(251 253 255);
+    font-weight: 800;
+    font-style: oblique;
+    font-family: Helvetica, Arial, sans-serif;
 }
+
 
 .navbar-brand {
   color: #144b9d;
@@ -54,7 +57,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color:#e7ebf1
+  color:#505e74
 
 }
 
