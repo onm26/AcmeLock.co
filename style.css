@@ -48,7 +48,7 @@ p {
   --bs-gradient: none;
 }
 
-.hero {
+.home {
   width: 100%;
   height: 800px;
   background-image:
@@ -61,3 +61,67 @@ p {
 
 }
 
+.commerical {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/store.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#505e74
+
+}
+
+.residential {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/house.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#505e74
+
+}
+
+.automotive {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/auto.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#505e74
+
+}
+
+.aboutus {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/workshop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#505e74
+
+}
+
+.contact {
+  width: 100%;
+  height: 800px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.4) 100%),
+    url("images/city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#505e74
+
+}
