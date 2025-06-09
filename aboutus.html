@@ -24,6 +24,10 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <!--Vue.js for M5 javascript interactivety -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
 </head>
 
 <body>
@@ -86,22 +90,96 @@ title">About Us</h1>
           <p>Acme Lock Company has been helping the New Orleans metro area with locks since 1928. 
             We take pride in helping customers stay safe at home, work, or on the road.
           </p>
-          <a class="btn btn-primary" href="#">Call now</a>
+                  <!-- INTERACTIVE BUTTONS -->
+          <div class="container text-center my-4">
+            <a href="#" id="reviewBtn" class="btn btn-primary">Leave a Review</a>
+            <a href="#" id="contactBtn" class="btn btn-secondary">Contact Us</a>
+          </div>
         </div>
       </div>
     </div>
  <!-- END HERO SECTION -->
+      
+<!--LIVE FEED ADDITION-->
+ <div id="news-feed" class="container my-5">
+  <h2>Locksmith Industry Headlines</h2>
+  <ul class="list-group">
+    <li v-for="item in items" :key="item.link" class="list-group-item">
+      <a :href="item.link" target="_blank">{{ item.title }}</a>
+    </li>
+  </ul>
+</div>
 
-    <script src="js/app.js"></script>
+<!-- CONTACT FORM SECTION -->
+<div class="container my-5" id="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="name" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" required />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message:</label>
+      <textarea class="form-control" id="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+    <div id="formResponse" class="mt-3 text-success" style="display: none;">
+      Thank you! We'll be in touch soon.
+    </div>
+  </form>
+</div>
 
-    <hr class="col-1 my-4">
-        <!-- links to documents or external site -->
-        <a href="" class="btn btn-primary">placeholder</a>
-        <a href="" class="btn btn-secondary">placeholder</a>
+<!-- JAVASCRIPT FOR BUTTONS AND FORM -->
+<script>
+  // Call Us Button
+
+  // Google Review Button
+  document.getElementById('reviewBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.open('https://www.google.com/maps/place/ACME+LOCK+CO/@29.9620102,-90.140341,15z/data=!4m2!3m1!1s0x0:0xfaa2dfc5c2cde3ce?sa=X&amp;ved=2ahUKEwjrsJfqmND0AhX5pXIEHV2mB2gQ_BJ6BAhLEAU');
+  });
+
+  // Scroll to Contact Form
+  document.getElementById('contactBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Contact Form Submission
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formResponse').style.display = 'block';
+    this.reset();
+  });
+</script>
+
       </div>
     </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
+  
+  <!--LIVE FEED ADDITION ACTUAL INPUT USING VUE-->
+  <script>
+    new Vue({
+      el: '#news-feed',
+      data: {
+        items: []
+      },
+      created() {
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://media.rss.com/locksmith-security-network/feed.xml')
+          .then(res => res.json())
+          .then(data => {
+            this.items = data.items.slice(0, 5); // show top 5 headlines
+        });
+      }
+    });
+</script>
+ 
 </body>  
+  
 
 </html>
