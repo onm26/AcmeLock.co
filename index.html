@@ -74,7 +74,7 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-    </div>
+    </div> 
   </nav>
   <!-- HERO SECTION -->
     <div class="home position-relative overflow-hidden d-flex align-items
@@ -118,22 +118,23 @@
 <!-- CONTACT FORM SECTION -->
 <div class="container my-5" id="contact">
   <h2>Contact Us</h2>
-  <form id="contactForm" action="https://webprojx.infinityfreeapp.com/contact-submit.php" method="POST">
-    <div class="mb-3">
-      <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" name="name" id="name" required />
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email:</label>
-      <input type="email" class="form-control" name="email" id="email" required />
-    </div>
+
+    <form action="https://webprojx.infinityfreeapp.com/contact-submit.php" method="POST" id="contactForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" name="name" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" name="email" id="email" required />
+      </div>
     <div class="mb-3">
       <label for="message" class="form-label">Message:</label>
       <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Send Message</button>
-
-  </form>
+    </form>
+  
 </div>
 
 <!-- JAVASCRIPT FOR BUTTONS AND FORM -->
