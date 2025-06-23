@@ -42,11 +42,6 @@
     </div>
 
     <!--Social Links -->
-    <div>
-      <a href="#" class="mx-2 text-decoration-none text-dark">Facebook</a>
-      <a href="#" class="mx-2 text-decoration-none text-dark">Twitter</a>
-      <a href="#" class="mx-2 text-decoration-none text-dark">Instagram</a>
-    </div>
 
     <!--Cart Link -->
     <div>
@@ -57,7 +52,9 @@
   </div>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="navbar-brand" href="index.html">
+      <img src="images/acme.webp" alt="Acme Lock Company Logo" height="40">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-bar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -70,8 +67,7 @@
          
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+
         </form>
       </div>
     </div>
@@ -99,15 +95,31 @@
           <div class="container text-center my-4">
             <a href="#" id="reviewBtn" class="btn btn-primary">Leave a Review</a>
             <a href="#" id="contactBtn" class="btn btn-secondary">Contact Us</a>
+            <a href="#" id="VTbutton" class="btn btn-primary">Take a Look</a>
           </div>
+           <img src="images/acme.webp" alt="Acme Lock Company Logo" height="200">
         </div>
       </div>
     </div>
  <!-- END HERO SECTION -->
+ 
+ <!-- VIDEO DEMO SECTION -->
+<div class="container my-5" id="video-demo">
+  <h2 class="text-center">View Acme Lock in Action</h2>
+  <div class="d-flex justify-content-center">
+    <span class="border border-primary border-5">
+      <video 
+        width="640" height="360" controls>
+      <source src="VT2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </span>
+  </div>
+</div>  
       
 <!--LIVE FEED ADDITION-->
  <div id="news-feed" class="container my-5">
-  <h2>Locksmith Industry Headlines</h2>
+  <h2 class="text-center">Locksmith Industry Headlines</h2>
   <ul class="list-group">
     <li v-for="item in items" :key="item.link" class="list-group-item">
       <a :href="item.link" target="_blank">{{ item.title }}</a>
@@ -117,7 +129,7 @@
 
 <!-- CONTACT FORM SECTION -->
 <div class="container my-5" id="contact">
-  <h2>Contact Us</h2>
+  <h2 class="text-center">Contact Us</h2>
   <form id="contactForm">
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
@@ -152,6 +164,12 @@
   document.getElementById('contactBtn').addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Scroll to Video
+  document.getElementById('VTbutton').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('VTbutton').scrollIntoView({ behavior: 'smooth' });
   });
 
   // Contact Form Submission
